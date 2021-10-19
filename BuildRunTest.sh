@@ -168,6 +168,7 @@ case "$mode" in
 
                     # 將輸出檔轉換成 UNIX 結尾（CR）
 					if [ "$LINE_END" = "CR" ]; then
+						HighLight "使用 UNIX 行尾 (CRLF > CR)"
 						"$DOS2UNIX" -k "$OUTPUT"
 					fi
 
