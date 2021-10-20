@@ -5,7 +5,7 @@
 
 
 # Git Bash 預設路徑
-LINE_END="CR"				# CR for UNIX/Linux, CRLF for Windows
+LINE_END="CRLF"
 DOS2UNIX="dos2unix"
 
 
@@ -166,9 +166,9 @@ case "$mode" in
                     # 執行、輸入測資並將結果存到對應輸出檔
                     "$EXE_PATH" < "$INPUT" > "$OUTPUT"
 
-                    # 將輸出檔轉換成 UNIX 結尾（CR）
-					if [ "$LINE_END" = "CR" ]; then
-						HighLight "使用 UNIX 行尾 (CRLF > CR)"
+                    # 將輸出檔轉換成 UNIX 結尾（LF）
+					if [ "$LINE_END" != "CRLF" ]; then
+						HighLight "使用 UNIX 行尾 (CRLF > LF)"
 						"$DOS2UNIX" -k "$OUTPUT"
 					fi
 
